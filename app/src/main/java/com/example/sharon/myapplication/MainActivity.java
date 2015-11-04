@@ -46,12 +46,13 @@ import java.net.URL;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    private   LoginButton loginButton;
+    private LoginButton loginButton;
     private CallbackManager callbackManager=CallbackManager.Factory.create();
     private static final String TAG="findit";
     private String usrID,usrName;
     private Bitmap bitmap;
     ImageView user_image;
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate");
         user_image=(ImageView)findViewById(R.id.imageView);
+        sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         // Callback registration
+
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
 
 
@@ -88,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 bitmap=getFacebookProfilePicture(usrID);
                                 user_image.setImageBitmap(bitmap);
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+
+                                editor.putString("nameKey", usrName);
+                                editor.commit();
+
                             }
 
                         });
