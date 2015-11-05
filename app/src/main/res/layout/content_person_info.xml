@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next Page"
-        android:id="@+id/button2"
+        android:id="@+id/personInfoNextPageButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="52dp" />
@@ -24,10 +24,42 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/editTextName"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/button2"
-        android:hint="name" />
+        android:layout_toStartOf="@+id/personInfoNextPageButton"
+        android:hint="First Name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/editTextAddress"
+        android:hint="Home Address"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/editText3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editTextSSN"
+        android:hint="Indentifying No."
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editTextAddress"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:hint="Last Name"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignStart="@+id/editTextName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,20 +67,9 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginTop="42dp"
-        android:hint="Postal Address" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_marginTop="50dp"
-        android:hint="SSN" />
+        android:hint="City, State, PostCode"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/editTextAddress"
+        android:layout_alignStart="@+id/editTextAddress" />
 
 </RelativeLayout>

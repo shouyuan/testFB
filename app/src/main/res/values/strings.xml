@@ -7,5 +7,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_person_info">personInfoActivity</string>
     <string name="title_activity_login_comfirm">LoginComfirmActivity</string>
+    <string name="title_activity_foreign_info">ForeignInfoActivity</string>
+    <string name="title_activity_person_info_confirm">personInfoConfirmActivity</string>
 
 </resources>

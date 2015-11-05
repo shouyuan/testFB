@@ -9,24 +9,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class personInfoActivity extends AppCompatActivity {
+public class ForeignInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_person_info);
+        setContentView(R.layout.activity_foreign_info);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button nextpageButton=(Button)findViewById(R.id.personInfoNextPageButton);
+
+        Button nextpageButton=(Button)findViewById(R.id.foreignNextButton);
         nextpageButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(personInfoActivity.this, ForeignInfoActivity.class);
+                Intent i = new Intent(ForeignInfoActivity.this, personInfoConfirmActivity.class);
                 startActivity(i);
             }
         });
-
     }
 
 }

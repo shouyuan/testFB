@@ -40,6 +40,18 @@
             android:label="@string/title_activity_login_comfirm"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".Main2Activity" >
+        </activity>
+        <activity
+            android:name=".ForeignInfoActivity"
+            android:label="@string/title_activity_foreign_info"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".personInfoConfirmActivity"
+            android:label="@string/title_activity_person_info_confirm"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
