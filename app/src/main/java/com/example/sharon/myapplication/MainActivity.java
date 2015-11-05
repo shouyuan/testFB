@@ -2,9 +2,11 @@ package com.example.sharon.myapplication;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.GpsStatus;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -51,10 +54,12 @@ public class MainActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager=CallbackManager.Factory.create();
     private static final String TAG="findit";
-    private String usrID,usrName;
-    private Bitmap bitmap;
-    ImageView user_image;
+    public String usrID,usrName;
+    public Bitmap bitmap;
+    public static String bitString;
+
     SharedPreferences sharedpreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Log.i(TAG, "onCreate");
-        user_image=(ImageView)findViewById(R.id.imageView);
-        sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+       sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         // Callback registration
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -85,23 +89,26 @@ public class MainActivity extends AppCompatActivity {
                                     JSONObject object,
                                     GraphResponse response) {
                                 // Application code
-                                usrID=response.getJSONObject().optString("id");
-                                Log.i(TAG, "---"+usrID);
-                                usrName=response.getJSONObject().optString("name");
-                                Log.i(TAG, "---"+usrName);
-                                Log.i(TAG, "---"+response.toString());
+                                usrID = response.getJSONObject().optString("id");
+                                Log.i(TAG, "---" + usrID);
+                                usrName = response.getJSONObject().optString("name");
+                                Log.i(TAG, "---" + usrName);
+                                Log.i(TAG, "---" + response.toString());
 
-                                bitmap=getFacebookProfilePicture(usrID);
+                                bitmap = getFacebookProfilePicture(usrID);
 
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
 
                                 editor.putString("nameKey", usrName);
 
-                                String bitString=BitMapToString(bitmap);
+                                bitString = BitMapToString(bitmap);
                                 editor.putString("bitmap", bitString);
 
                                 editor.commit();
-                                user_image.setImageBitmap(StringToBitMap(bitString));
+
+
+                                Intent  i = new Intent(MainActivity.this,LoginComfirmActivity.class);
+                                startActivity(i);
 
 
                             }
@@ -135,16 +142,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                Log.i(TAG, "OnClick");
-            }
-
-        });
     }
 
     @Override
@@ -217,14 +214,5 @@ public class MainActivity extends AppCompatActivity {
         return temp;
     }
 
-    public Bitmap StringToBitMap(String encodedString){
-        try {
-            byte [] encodeByte=Base64.decode(encodedString,Base64.DEFAULT);
-            Bitmap bitmap=BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            return bitmap;
-        } catch(Exception e) {
-            e.getMessage();
-            return null;
-        }
-    }
+
 }

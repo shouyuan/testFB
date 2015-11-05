@@ -7,46 +7,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+    tools:showIn="@layout/activity_login_comfirm"
+    tools:context="com.example.sharon.myapplication.LoginComfirmActivity">
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/button"
+        android:text="Yes, go to taxing"
+        android:id="@+id/rightInfoButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:hint="Email" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginBottom="33dp"
-        android:layout_above="@+id/editText"
-        android:hint="Name" />
+        android:text="No, back to register"
+        android:id="@+id/WrorngInfoButton"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/rightInfoButton"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Or"
-        android:id="@+id/textView4"
-        android:layout_toStartOf="@+id/editText"
-        android:layout_below="@+id/button" />
-
+        android:text="Is that you?"
+        android:layout_above="@+id/rightInfoButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
