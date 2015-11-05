@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/editTextForeignCountry"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText6"
+        android:layout_alignStart="@+id/editTextForeignState"
         android:layout_marginTop="28dp"
         android:hint="Foreign Country" />
 
@@ -26,31 +26,32 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/editText5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:hint="Foreign Province" />
+        android:id="@+id/editTextForeignState"
+        android:layout_marginTop="39dp"
+        android:hint="Foreign Province"
+        android:layout_below="@+id/editTextForeignCountry"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/editText6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:hint="Zip Code" />
+        android:id="@+id/editTextForeignZip"
+        android:layout_marginTop="40dp"
+        android:hint="Zip Code"
+        android:layout_below="@+id/editTextForeignState"
+        android:layout_alignStart="@+id/editTextForeignState" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/editText7"
-        android:layout_alignStart="@+id/editText7"
+        android:layout_below="@+id/editTextForeignZip"
+        android:layout_alignStart="@+id/editTextForeignZip"
         android:layout_marginTop="77dp"
-        android:layout_alignEnd="@+id/editText7"
-        android:id="@+id/radioGroup">
+        android:layout_alignEnd="@+id/editTextForeignZip"
+        android:id="@+id/radioGroup"
+        android:orientation="vertical">
 
         <RadioButton
             android:layout_width="wrap_content"

@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.util.Log;
 import android.widget.ImageView;
@@ -53,7 +54,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager=CallbackManager.Factory.create();
-    private static final String TAG="findit";
+    public static final String TAG="findit";
     public String usrID,usrName;
     public Bitmap bitmap;
     public static String bitString;
@@ -70,6 +71,16 @@ public class MainActivity extends AppCompatActivity {
         loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
 
+        Button nextpageButton=(Button)findViewById(R.id.button);
+        nextpageButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, personInfoActivity.class);
+                startActivity(i);
+
+            }
+        });
 
         Log.i(TAG, "onCreate");
        sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);

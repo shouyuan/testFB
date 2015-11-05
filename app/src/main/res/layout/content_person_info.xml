@@ -15,16 +15,16 @@
         android:layout_height="wrap_content"
         android:text="Next Page"
         android:id="@+id/personInfoNextPageButton"
+        android:layout_marginBottom="38dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="52dp" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextFirstName"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/personInfoNextPageButton"
         android:hint="First Name" />
@@ -37,7 +37,7 @@
         android:id="@+id/editTextAddress"
         android:hint="Home Address"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignStart="@+id/editTextLastName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
         android:ems="10"
         android:id="@+id/editTextSSN"
         android:hint="Indentifying No."
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/editTextLastName"
         android:layout_alignStart="@+id/editTextAddress"
         android:layout_marginTop="29dp" />
 
@@ -55,20 +55,20 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/editTextLastName"
         android:hint="Last Name"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/editTextName"
-        android:layout_alignStart="@+id/editTextName" />
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/editTextFirstName"
+        android:layout_alignStart="@+id/editTextFirstName" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/editTextCity"
         android:hint="City, State, PostCode"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="29dp"
         android:layout_below="@+id/editTextAddress"
         android:layout_alignStart="@+id/editTextAddress" />
 
