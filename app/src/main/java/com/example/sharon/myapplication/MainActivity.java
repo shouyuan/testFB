@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
@@ -40,6 +41,7 @@ import com.facebook.login.widget.ProfilePictureView;
 
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -90,11 +92,17 @@ public class MainActivity extends AppCompatActivity {
                                 Log.i(TAG, "---"+response.toString());
 
                                 bitmap=getFacebookProfilePicture(usrID);
-                                user_image.setImageBitmap(bitmap);
+
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
 
                                 editor.putString("nameKey", usrName);
+
+                                String bitString=BitMapToString(bitmap);
+                                editor.putString("bitmap", bitString);
+
                                 editor.commit();
+                                user_image.setImageBitmap(StringToBitMap(bitString));
+
 
                             }
 
@@ -200,5 +208,23 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "err" + "IO");
         }
         return bitmap;
+    }
+    public String BitMapToString(Bitmap bitmap){
+        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+        byte [] b=baos.toByteArray();
+        String temp=Base64.encodeToString(b, Base64.DEFAULT);
+        return temp;
+    }
+
+    public Bitmap StringToBitMap(String encodedString){
+        try {
+            byte [] encodeByte=Base64.decode(encodedString,Base64.DEFAULT);
+            Bitmap bitmap=BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch(Exception e) {
+            e.getMessage();
+            return null;
+        }
     }
 }
