@@ -49,8 +49,9 @@ public class personInfoConfirmActivity extends AppCompatActivity {
         TextView showforeignZip=(TextView)findViewById(R.id.ShowZip);
         showforeignZip.setText(zip);
 
+
         setSupportActionBar(toolbar);
-        Button nextpageButton=(Button)findViewById(R.id.button2);
+      Button nextpageButton=(Button)findViewById(R.id.button2);
         nextpageButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -58,14 +59,11 @@ public class personInfoConfirmActivity extends AppCompatActivity {
 
 
 
-                Intent i = new Intent(personInfoConfirmActivity.this, personInfoConfirmActivity.class);
-                startActivity(i);
+         Intent i = new Intent(personInfoConfirmActivity.this, Income_Activity.class);
+              startActivity(i);
 
             }
         });
-
-
-
     }
 
 }

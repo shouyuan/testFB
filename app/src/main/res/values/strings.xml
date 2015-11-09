@@ -9,5 +9,9 @@
     <string name="title_activity_login_comfirm">LoginComfirmActivity</string>
     <string name="title_activity_foreign_info">ForeignInfoActivity</string>
     <string name="title_activity_person_info_confirm">personInfoConfirmActivity</string>
+    <string name="title_activity_income_">Income_Activity</string>
+    <string name="title_activity_income2_">income2_Activity</string>
+    <string name="title_activity_income_confirm">Income_confirm</string>
+
 
 </resources>

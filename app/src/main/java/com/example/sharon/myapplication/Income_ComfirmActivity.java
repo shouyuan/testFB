@@ -27,7 +27,7 @@ public class Income_ComfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_income__comfirm);
+        setContentView(R.layout.activity_income_confirm);
 
         sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);;
 

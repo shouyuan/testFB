@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your income, we calculate tax for you"
-        android:id="@+id/textView2"
+        android:id="@+id/showView2"
         android:textStyle="bold"
         android:textSize="35px"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:ems="10"
         android:layout_height="wrap_content"
         android:id="@+id/editText8"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/showView2"
         android:hint="federal withheld(W2)"
         android:layout_centerHorizontal="true"
         />

@@ -30,31 +30,31 @@ public class Income_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sp.edit();
 
-                EditText EditText1 = (EditText)findViewById(R.id.editText);
+                EditText EditText1 = (EditText)findViewById(R.id.blockText);
                 String etString1 = EditText1.getText().toString();
                 editor.putString("wage",etString1);
 
-                EditText EditText2 = (EditText)findViewById(R.id.editText2);
+                EditText EditText2 = (EditText)findViewById(R.id.blockText2);
                 String etString2 = EditText2.getText().toString();
                 editor.putString("taxable_refund",etString2);
 
-                EditText EditText3 = (EditText)findViewById(R.id.editText3);
+                EditText EditText3 = (EditText)findViewById(R.id.blockText3);
                 String etString3 = EditText3.getText().toString();
                 editor.putString("scholarship",etString3);
 
-                EditText EditText4 = (EditText)findViewById(R.id.editText4);
+                EditText EditText4 = (EditText)findViewById(R.id.blockText4);
                 String etString4 = EditText4.getText().toString();
                 editor.putString("treaty",etString4);
 
-                EditText EditText5 = (EditText)findViewById(R.id.editText5);
+                EditText EditText5 = (EditText)findViewById(R.id.blockText5);
                 String etString5 = EditText5.getText().toString();
                 editor.putString("treaty_type",etString5);
 
-                EditText EditText6 = (EditText)findViewById(R.id.editText6);
+                EditText EditText6 = (EditText)findViewById(R.id.blockText6);
                 String etString6 = EditText6.getText().toString();
                 editor.putString("itemlized_deduction",etString6);
 
-                EditText EditText7 = (EditText)findViewById(R.id.editText7);
+                EditText EditText7 = (EditText)findViewById(R.id.blockText7);
                 String etString7 = EditText7.getText().toString();
                 editor.putString("exemption",etString7);
 
