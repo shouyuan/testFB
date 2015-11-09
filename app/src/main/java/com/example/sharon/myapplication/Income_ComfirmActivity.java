@@ -13,21 +13,33 @@ public class Income_ComfirmActivity extends AppCompatActivity {
 
     private Button bt;
     private SharedPreferences sp;
-    private TextView block1 = (TextView)findViewById(R.id.textView5);
-    private TextView block2 = (TextView)findViewById(R.id.textView7);
-    private TextView block3 = (TextView)findViewById(R.id.textView9);
-    private TextView block4 = (TextView)findViewById(R.id.textView11);
-    private TextView block5 = (TextView)findViewById(R.id.textView13);
-    private TextView block6 = (TextView)findViewById(R.id.textView15);
-    private TextView block7 = (TextView)findViewById(R.id.textView17);
-    private TextView block8 = (TextView)findViewById(R.id.textView19);
-    private TextView block9 = (TextView)findViewById(R.id.textView21);
-    private TextView block10 = (TextView)findViewById(R.id.textView23);
-    private TextView block11 = (TextView)findViewById(R.id.textView25);
+    private TextView block1;
+    private TextView block2 ;
+    private TextView block3;
+    private TextView block4;
+    private TextView block5;
+    private TextView block6 ;
+    private TextView block7;
+    private TextView block8;
+    private TextView block9;
+    private TextView block10;
+    private TextView block11 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_confirm);
+
+        block1 = (TextView) findViewById(R.id.textView115);
+        block2 = (TextView)findViewById(R.id.textView27);
+       block3 = (TextView)findViewById(R.id.textView9);
+       block4 = (TextView)findViewById(R.id.textView11);
+       block5 = (TextView)findViewById(R.id.textView13);
+       block6 = (TextView)findViewById(R.id.textView15);
+       block7 = (TextView)findViewById(R.id.textView17);
+       block8 = (TextView)findViewById(R.id.textView19);
+       block9 = (TextView)findViewById(R.id.textView21);
+       block10 = (TextView)findViewById(R.id.textView23);
+       block11 = (TextView)findViewById(R.id.textView25);
 
         sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);;
 
