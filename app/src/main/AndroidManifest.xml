@@ -54,31 +54,18 @@
             android:name=".Income_Activity"
             android:label="@string/title_activity_income_"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".income2_Activity"
             android:label="@string/title_activity_income2_"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Income_ComfirmActivity"
                     android:label="@string/title_activity_income_confirm"
-                    android:theme="@style/AppTheme.NoActionBar"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                    android:theme="@style/AppTheme.NoActionBar">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
