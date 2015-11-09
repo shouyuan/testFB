@@ -40,8 +40,6 @@
             android:label="@string/title_activity_login_comfirm"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Main2Activity" >
-        </activity>
         <activity
             android:name=".ForeignInfoActivity"
             android:label="@string/title_activity_foreign_info"
@@ -51,6 +49,36 @@
             android:name=".personInfoConfirmActivity"
             android:label="@string/title_activity_person_info_confirm"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Income_Activity"
+            android:label="@string/title_activity_income_"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".income2_Activity"
+            android:label="@string/title_activity_income2_"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Income_ComfirmActivity"
+                    android:label="@string/title_activity_income_confirm"
+                    android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
