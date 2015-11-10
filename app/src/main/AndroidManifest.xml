@@ -54,18 +54,26 @@
             android:name=".Income_Activity"
             android:label="@string/title_activity_income_"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
         <activity
             android:name=".income2_Activity"
             android:label="@string/title_activity_income2_"
             android:theme="@style/AppTheme.NoActionBar" >
-
         </activity>
-        <activity android:name=".Income_ComfirmActivity"
-                    android:label="@string/title_activity_income_confirm"
-                    android:theme="@style/AppTheme.NoActionBar">
-
+        <activity
+            android:name=".Income_ComfirmActivity"
+            android:label="@string/title_activity_income_confirm"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".Refund_Activity"
+            android:label="@string/title_activity_refund_"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".ConfirmRefundActivity"
+            android:label="@string/title_activity_confirm_refund"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

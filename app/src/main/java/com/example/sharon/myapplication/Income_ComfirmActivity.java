@@ -71,10 +71,9 @@ public class Income_ComfirmActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*xx.class放下一页面名字
-                Intent i = new Intent(Income_ComfirmActivity.this,xx.class);
+                Intent i = new Intent(Income_ComfirmActivity.this,Refund_Activity.class);
                 startActivityForResult(i,0);
-                */
+
             }
         });
     }
