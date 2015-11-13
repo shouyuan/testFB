@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, personInfoActivity.class);
+                Intent i = new Intent(MainActivity.this, WelcomePageActivity.class);
                 startActivity(i);
 
             }
