@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ForeignInfoActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +29,7 @@ public class ForeignInfoActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
+                JSONObject object = new JSONObject();
 
                 EditText foreignCountryET=(EditText)findViewById(R.id.editTextForeignCountry);
                 String foreignCountryString=foreignCountryET.getText().toString();
@@ -44,6 +47,14 @@ public class ForeignInfoActivity extends AppCompatActivity {
                 editor.putString("foreignZip", foreignZipString);
                 editor.commit();
 
+                try{
+                    object.put("foreignCountry", foreignCountryString);
+                    object.put("foreignState", foreignStateString);
+                    object.put("foreignZip", foreignZipString);
+                    System.out.println(object);
+                }catch(JSONException e){
+
+                }
 
                 Intent i = new Intent(ForeignInfoActivity.this, personInfoConfirmActivity.class);
                 startActivity(i);

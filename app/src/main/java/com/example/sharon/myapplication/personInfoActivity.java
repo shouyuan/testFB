@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class personInfoActivity extends AppCompatActivity {
 
     @Override
@@ -27,6 +30,7 @@ public class personInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                JSONObject object = new JSONObject();
                 EditText firstNameET=(EditText)findViewById(R.id.editTextFirstName);
                 String firstnameString=firstNameET.getText().toString();
                 EditText lastNameET=(EditText)findViewById(R.id.editTextLastName);
@@ -46,6 +50,17 @@ public class personInfoActivity extends AppCompatActivity {
                 editor.putString("city", cityString);
                 editor.commit();
 
+                try{
+                    object.put("first name", firstnameString);
+                    object.put("last name", lastnameString);
+                    object.put("address", addressString);
+                    object.put("SSN", ssnString);
+                    object.put("city", cityString);
+                    System.out.println(object);
+                } catch(JSONException e){
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 Intent i = new Intent(personInfoActivity.this, ForeignInfoActivity.class);
                 startActivity(i);
 

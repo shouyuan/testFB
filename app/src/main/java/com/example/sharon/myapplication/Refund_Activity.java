@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Refund_Activity extends AppCompatActivity {
 
     private Button button;
@@ -27,6 +30,7 @@ public class Refund_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                JSONObject object = new JSONObject();
                 SharedPreferences.Editor editor = sp.edit();
 
                 EditText EditText1 = (EditText) findViewById(R.id.editText23a);
@@ -54,6 +58,19 @@ public class Refund_Activity extends AppCompatActivity {
                 editor.putString("Tax2015", editText24String);
 
                 editor.commit();
+
+                try{
+                    object.put("Refund", editText23aString);
+                    object.put("RoutingNum", editText23bString);
+                    object.put("CheckingOrSaving", String.valueOf(radioGroup - 2131493067));
+                    object.put("AccountNum", editText23dString);
+                    object.put("MailOutUS", editText23eString);
+                    object.put("Tax2015", editText24String);
+                    System.out.println(object);
+                } catch(JSONException e){
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 Intent i = new Intent(Refund_Activity.this, ConfirmRefundActivity.class);
                 startActivity(i);
             }

@@ -160,7 +160,7 @@
         android:layout_height="wrap_content"
         android:text="  Confirm Your Refund Info  "
         android:textColor="#FFFFFF"
-        android:id="@+id/button2"
+        android:id="@+id/confirmReBt"
         android:layout_marginTop="40dp"
         android:background="#006699"
         android:clickable="true"

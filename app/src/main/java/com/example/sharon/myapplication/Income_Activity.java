@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Income_Activity extends AppCompatActivity {
     private Button bt;
     private SharedPreferences sp;
@@ -27,12 +30,14 @@ public class Income_Activity extends AppCompatActivity {
         bt = (Button)findViewById(R.id.button1);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
+                JSONObject object = new JSONObject();
                 SharedPreferences.Editor editor = sp.edit();
 
                 EditText EditText1 = (EditText)findViewById(R.id.blockText);
                 String etString1 = EditText1.getText().toString();
-                editor.putString("wage",etString1);
+                editor.putString("wage", etString1);
+
 
                 EditText EditText2 = (EditText)findViewById(R.id.blockText2);
                 String etString2 = EditText2.getText().toString();
@@ -59,6 +64,20 @@ public class Income_Activity extends AppCompatActivity {
                 editor.putString("exemption",etString7);
 
                 editor.commit();
+
+                try{
+                    object.put("wage",etString1);
+                    object.put("taxable_refund",etString2);
+                    object.put("scholarship",etString3);
+                    object.put("treaty",etString4);
+                    object.put("treaty_type",etString5);
+                    object.put("itemlized_deduction",etString6);
+                    object.put("exemption",etString7);
+                    System.out.println(object);
+                } catch(JSONException e){
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 Intent i = new Intent(Income_Activity.this,income2_Activity.class);
                 startActivity(i);
             }
