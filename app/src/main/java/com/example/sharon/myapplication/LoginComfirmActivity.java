@@ -12,9 +12,12 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class LoginComfirmActivity extends AppCompatActivity {
     public ImageView user_image;
+    public ImageView user_image_side;
+    public TextView user_id_side;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,11 @@ public class LoginComfirmActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                MainActivity ma = new MainActivity();
+                user_image_side = (ImageView)findViewById(R.id.portrait);
+                user_image_side.setImageBitmap(StringToBitMap(MainActivity.bitString));
+                user_id_side = (TextView)findViewById(R.id.usernameside);
+                user_id_side.setText(ma.usrName);
                 Intent i = new Intent(LoginComfirmActivity.this, personInfoActivity.class);
                 startActivity(i);
             }

@@ -15,6 +15,10 @@
     <string name="title_activity_refund_">Refund_Activity</string>
     <string name="title_activity_confirm_refund">ConfirmRefundActivity</string>
     <string name="title_activity_welcome_page">WelcomePageActivity</string>
+    <string name="title_activity_sideslash">sideslash</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
 </resources>
